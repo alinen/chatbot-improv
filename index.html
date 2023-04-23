@@ -1,0 +1,42 @@
+<!---
+// Aline Normoyle, alinen, 2023
+// Integration of the SPOLIN chatbot with speech-to-text and text-to-speech
+---!>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="Skeleton-2.0.4/css/normalize.css">
+<link rel="stylesheet" href="Skeleton-2.0.4/css/skeleton.css">
+<link rel="stylesheet" href="Skeleton-2.0.4/css/custom.css">
+<script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="main.js"></script>
+<script language="javascript" type="text/javascript" src="character.js"></script>
+<script language="javascript" type="text/javascript" src="speech-recognition.js"></script>
+<script language="javascript" type="text/javascript" src="text-to-speech.js"></script>
+</head>
+<body onLoad="onLoad()">
+  <h3></h3>
+  <div id="sketch-holder">
+      <!-- Our sketch will go here! -->
+  </div>
+  <button id="listen" onclick="startListening()">Listen</button>
+  <form onSubmit="return onEnter();">
+  <input id="text_input" type="text" placeholder="Press Listen to speak, or type your messages here" style="width:700px"></input>
+  <div class="controls">
+  <button id="play" type="submit">Get Response</button>
+  </div>
+  </form>
+  <h3>Transcript</h3>
+  <p id="transcript">
+  </p>
+  <hr>
+  <b>Credits</b>
+  <p>Demo by Aline Normoyle (alinen) 2023. 
+  Built with the <a href="https://spolin.isi.edu/">SPOLIN chatbot demo</a> by Justin Cho and Jonathan May.
+  Uses <a href="https://p5js.org/">P5js</a>, XXX, and <a href="http://getskeleton.com/">SkeletonCSS</a>.
+</body>
+</html>

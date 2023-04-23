@@ -1,0 +1,10 @@
+/**
+ * Put body margin back
+ */
+body {
+  margin: 1em;
+}
+
+input#start {
+  background-color: #ffd179;
+}
