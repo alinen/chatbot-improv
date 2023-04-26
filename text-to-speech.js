@@ -22,6 +22,7 @@ function speak(response) {
         console.error("SpeechSynthesisUtterance.onerror");
       };
   
+      // https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices
       utterThis.voice = synth.getVoices()[0];
       utterThis.pitch = 1.0;
       utterThis.rate = 0.9;

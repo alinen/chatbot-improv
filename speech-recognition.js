@@ -13,7 +13,7 @@ recognition.maxAlternatives = 1;
 
 function startListening() {
   recognition.start();
-  console.log('Ready to listen.');
+  //console.log('Ready to listen.');
 }
 
 recognition.onresult = function(event) {
@@ -31,8 +31,8 @@ recognition.onresult = function(event) {
   var textInput = document.getElementById("text_input");
   textInput.value = textContent;
 
-  console.log(textContent);
-  console.log('Confidence: ' + event.results[0][0].confidence);
+  //console.log(textContent);
+  //console.log('Confidence: ' + event.results[0][0].confidence);
   onEnter();
 }
 

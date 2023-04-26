@@ -9,7 +9,7 @@ transcript = "";
 let thinking = false;
 
 // endpoint
-cpu_url = ""
+cpu_url = "https://spolin.isi.edu/ya_back/api";
 
 function onEnter() {
     if (thinking) return; // don't interrupt 
@@ -65,7 +65,7 @@ function spolin_request(user_response){
     };
 
     request_data = JSON.stringify(request_data)
-    console.log(request_data)
+    //console.log(request_data)
 
     make_ajax_call("cpu", cpu_url, request_data)
     //animateResponse("It's a lovely day and I can't wait to see what happens!");
@@ -83,7 +83,7 @@ function make_ajax_call(endpoint_type, url, request_data){
         crossDomain:true,
 
         success: function(data) {
-            console.log("Received API response.");
+            //console.log("Received API response.");
         },
         error: function(jqxhr, status, exception) {
             console.log("failed with cpu url: "+status);
