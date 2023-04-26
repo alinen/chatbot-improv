@@ -5,17 +5,17 @@ let msg_list = []
 let top_k = 20 
 let mmi_temp = 0.7
 let forward_temp = 1.0
-let thinking = false;
 transcript = "";
+let thinking = false;
 
 // endpoint
-cpu_url = "";
+cpu_url = ""
 
 function onEnter() {
     if (thinking) return; // don't interrupt 
 
     thinking = true;
-    // todo: animate waiting
+    animateThink();
     var item = document.getElementById("text_input");
     spolin_request(item.value);
     return false; // don't reload page
@@ -23,8 +23,8 @@ function onEnter() {
 
 function animateResponse(response) {
     
+    animateWord(response, 0);
     speak(response);
-    characterTalk(response, 3);
 
     // Update our HTML page
     var item = document.getElementById("text_input");
@@ -68,6 +68,7 @@ function spolin_request(user_response){
     console.log(request_data)
 
     make_ajax_call("cpu", cpu_url, request_data)
+    //animateResponse("It's a lovely day and I can't wait to see what happens!");
 }
 
 function make_ajax_call(endpoint_type, url, request_data){
@@ -94,7 +95,7 @@ function make_ajax_call(endpoint_type, url, request_data){
         if (typeof data === 'string'){
             data = JSON.parse(data); 
         }
-        console.log("Response:", data);
+        //console.log("Response:", data);
         msg_list = data["tokenized_message_list"];
         animateResponse(data["responses"][0][0]);
     });;

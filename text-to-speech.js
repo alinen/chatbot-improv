@@ -11,11 +11,11 @@ function speak(response) {
       const utterThis = new SpeechSynthesisUtterance(response);
   
       utterThis.onend = function (event) {
-        console.log("SpeechSynthesisUtterance.onend");
+        endAnimateWord(event.utterance.text);
       };
 
       utterThis.onboundary = function (event) {
-        console.log("SpeechSynthesisUtterance.boundary: "+event.charIndex);
+        animateWord(event.utterance.text, event.charIndex);
       };
   
       utterThis.onerror = function (event) {
